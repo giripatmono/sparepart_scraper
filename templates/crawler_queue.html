@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crawling Queue</title>
+    <style>td {text-align: center;}</style>
+</head>
+<body>
+
+    <h1>Crawling Queue</h1>
+    <table border='1'>
+    <tr>
+        <th>ID</th>
+        <th>INPUT PARAM</th>
+        <th>DATE ADDED</th>
+    </tr>
+    {% for spider, queues in spiders.items() %}
+        <tr>
+            <th colspan="3" style='background-color: #ddd'>{{spider}}</th>
+        </tr>
+        {% for queue in queues %}
+        <tr>
+            <td>{{queue[0]}}</td>
+            <td>{{queue[1]}}</td>
+            <td width="15%">{{queue[2]}}</td>
+        </tr>
+        {% endfor %}
+    {% endfor %}
+    </table>
+</body>
+</html>
+
